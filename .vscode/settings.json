@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "*.ejs": "html",
-        "string": "cpp",
-        "unordered_map": "cpp"
-    }
-}
