@@ -1,12 +1,18 @@
-// Naive Approach
+const calc = (arr: number[], i: number, j: number) => {
+    return Math.abs(i - j) * Math.min(arr[i], arr[j]);
+};
 
-function maxArea(height: number[]): number {
+function maxArea(arr: number[]): number {
     let maxArea = 0;
+    let low = 0;
+    let high = arr.length - 1;
 
-    for (let i = 0; i < height.length; i++) {
-        for (let j = i + 1; j < height.length; j++) {
-            const temp = Math.min(height[i], height[j]) * (j - i);
-            maxArea = Math.max(temp, maxArea);
+    while (low < high) {
+        maxArea = Math.max(calc(arr, low, high), maxArea);
+        if (arr[low] < arr[high]) {
+            low++;
+        } else {
+            high--;
         }
     }
 
