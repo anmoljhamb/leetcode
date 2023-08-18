@@ -1,5 +1,4 @@
 function productExceptSelf(arr: number[]): number[] {
-    const product = arr.reduce((prev, curr) => prev * curr, 1);
     const leftArr = [...arr];
     for (let i = 1; i < arr.length; i++) {
         leftArr[i] *= leftArr[i - 1];
