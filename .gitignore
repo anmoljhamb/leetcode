@@ -3,3 +3,4 @@ in.txt
 out.txt
 .vscode/*
 .vscode
+node_modules
