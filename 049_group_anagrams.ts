@@ -1,27 +1,14 @@
 function makeKey(str: string): string {
-    const freq: Record<string, number> = {};
-
+    const temp = "a".charCodeAt(0);
+    const count = new Array(26).fill(0);
     for (let i = 0; i < str.length; i++) {
-        if (str[i] in freq) {
-            freq[str[i]] += 1;
-        } else {
-            freq[str[i]] = 1;
-        }
+        count[str.charCodeAt(i) - temp] += 1;
     }
-
-    let ans = "";
-
-    const sortedKeys = Object.keys(freq).sort();
-
-    sortedKeys.forEach((key) => {
-        ans += `${key}:${freq[key]};`;
-    });
-
-    return ans;
+    return count.join("-");
 }
 
 function groupAnagrams(strs: string[]): string[][] {
-    const ans: string[][] = [];
+    // const ans: string[][] = [];
     const temp: Record<string, string[]> = {};
 
     strs.forEach((str) => {
@@ -32,8 +19,6 @@ function groupAnagrams(strs: string[]): string[][] {
             temp[key] = [str];
         }
     });
-
-    // console.log(temp);
 
     return Object.keys(temp).map((key) => temp[key]);
 }
