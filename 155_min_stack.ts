@@ -1,23 +1,23 @@
 class MinStack {
     arr: number[];
-    min: number;
+    min: number[];
     constructor() {
         this.arr = [];
-        this.min = Infinity;
+        this.min = [];
     }
 
     push(val: number): void {
         this.arr.push(val);
-        this.min = Math.min(this.min, val);
+        if (this.min.length === 0) {
+            this.min.push(val);
+        } else {
+            this.min.push(Math.min(val, this.getMin()));
+        }
     }
 
     pop(): void {
-        const temp = this.arr.pop();
-        if (this.min === temp)
-            this.min = this.arr.reduce(
-                (curr, val) => Math.min(curr, val),
-                Infinity
-            );
+        this.arr.pop();
+        this.min.pop();
     }
 
     top(): number {
@@ -25,15 +25,6 @@ class MinStack {
     }
 
     getMin(): number {
-        return this.min;
+        return this.min[this.min.length - 1];
     }
 }
-
-/**
- * Your MinStack object will be instantiated and called as such:
- * var obj = new MinStack()
- * obj.push(val)
- * obj.pop()
- * var param_3 = obj.top()
- * var param_4 = obj.getMin()
- */
