@@ -6,16 +6,19 @@ function characterReplacement(s: string, k: number): number {
     let low = 0,
         high = 0;
     let maxLength = 0;
-    const hashMap: number[] = new Array(26).fill(0);
+    const hashmap = new Array(26).fill(0);
+    let maxFreq = 0;
 
-    while (high < s.length) {
-        hashMap[getPos(s[high])]++;
-        while (high - low + 1 - Math.max(...hashMap) > k) {
-            hashMap[getPos(s[low])]--;
+    for (high = 0; high < s.length; high++) {
+        hashmap[getPos(s[high])]++;
+        maxFreq = Math.max(maxFreq, ...hashmap);
+
+        while (high - low + 1 - maxFreq > k) {
+            hashmap[getPos(s[low])]--;
             low++;
         }
+
         maxLength = Math.max(maxLength, high - low + 1);
-        high++;
     }
 
     return maxLength;
