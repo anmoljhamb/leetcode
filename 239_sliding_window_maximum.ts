@@ -15,6 +15,11 @@ function maxSlidingWindow(arr: number[], k: number): number[] {
             if (arr[high] >= arr[low]) {
                 ans.push(arr[high]);
             } else {
+                max = -Infinity;
+                for (let i = low + 1; i <= high; i++) {
+                    max = Math.max(max, arr[i]);
+                }
+                ans.push(max);
             }
         } else {
             ans.push(Math.max(arr[high], lastMax));
