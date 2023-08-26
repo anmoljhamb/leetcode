@@ -1,31 +1,20 @@
 function maxSlidingWindow(arr: number[], k: number): number[] {
     const ans: number[] = [];
-    let max = -Infinity;
-    let low = 0,
-        high = k;
-    for (let i = 0; i < k; i++) {
-        if (arr[i] >= max) {
-            max = arr[i];
+    let low = 0;
+    const q: number[] = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        while (q.length > 0 && arr[q[q.length - 1]] < arr[i]) {
+            q.pop();
         }
-    }
-    ans.push(max);
-    for (let i = k; i < arr.length; i++) {
-        const lastMax = ans[ans.length - 1];
-        if (arr[low] === lastMax) {
-            if (arr[high] >= arr[low]) {
-                ans.push(arr[high]);
-            } else {
-                max = -Infinity;
-                for (let i = low + 1; i <= high; i++) {
-                    max = Math.max(max, arr[i]);
-                }
-                ans.push(max);
-            }
-        } else {
-            ans.push(Math.max(arr[high], lastMax));
+        q.push(i);
+        if (low > q[0]) {
+            q.shift();
         }
-        low++;
-        high++;
+        if (i + 1 >= k) {
+            ans.push(arr[q[0]]);
+            low++;
+        }
     }
 
     return ans;
