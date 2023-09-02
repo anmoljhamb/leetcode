@@ -9,12 +9,12 @@ class ListNode {
 
 function reverseList(head: ListNode | null): ListNode | null {
     let temp: ListNode | null = null;
-    let low: ListNode | null = null;
+    let prev: ListNode | null = null;
     while (head && head?.val !== null) {
         temp = head.next;
-        head.next = low;
-        low = head;
+        head.next = prev;
+        prev = head;
         head = temp;
     }
-    return low;
+    return prev;
 }

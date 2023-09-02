@@ -7,72 +7,54 @@ class ListNode {
     }
 }
 
-const reverseLL = (head: ListNode | null) => {
+function printLL(head: ListNode | null): void {
     let curr = head;
-    let temp: ListNode | null = null;
-    let prev: ListNode | null = null;
-
+    const arr: number[] = [];
     while (curr) {
-        temp = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = temp;
+        arr.push(curr.val);
+        curr = curr.next;
+    }
+    console.log(arr);
+}
+
+function reverseLL(head: ListNode | null) {
+    let prev: ListNode | null = null;
+    let temp = head;
+
+    while (head) {
+        temp = head.next;
+        head.next = prev;
+        prev = head;
+        head = temp;
     }
 
     return prev;
-};
-
-function printLL(head: ListNode | null) {
-    let temp = head;
-    const ans: number[] = [];
-    while (temp) {
-        ans.push(temp.val);
-        temp = temp.next;
-    }
-    console.log(ans);
-}
-
-function copyLL(head: ListNode | null) {
-    if (!head) return null;
-    let ans: ListNode = new ListNode(head.val);
-    let temp = ans;
-    head = head.next;
-    while (head) {
-        ans.next = new ListNode(head.val);
-        head = head.next;
-        ans = ans.next;
-    }
-    return temp;
-}
-
-function listLength(head: ListNode | null) {
-    let ans = 0;
-    let curr = head;
-    while (curr) {
-        ans++;
-        curr = curr.next;
-    }
-    return ans;
 }
 
 function reorderList(head: ListNode | null): void {
     if (!head) return;
-    const n = listLength(head);
-    let head1: ListNode | null = head;
-    let head2 = reverseLL(copyLL(head));
-    const ans: ListNode = new ListNode(head1.val);
-    let count = 1;
-    head1 = head1.next;
 
-    while (count !== n) {
-        if (count % 2 === 1) {
-            head.next = new ListNode(head2!.val);
-            head2 = head2!.next;
-        } else {
-            head.next = new ListNode(head1!.val);
-            head1 = head1!.next;
-        }
-        head = head.next;
-        count++;
+    let slow: ListNode | null = head;
+    let fast = head.next;
+
+    while (fast !== null && fast.next !== null) {
+        fast = fast!.next;
+        fast = fast!.next;
+        slow = slow!.next;
+    }
+
+    let secondHalf = slow!.next;
+    slow!.next = null;
+
+    secondHalf = reverseLL(secondHalf);
+
+    let curr: ListNode | null = head;
+    while (curr && secondHalf) {
+        let temp1 = curr.next;
+        let temp2 = secondHalf!.next;
+        curr.next = secondHalf;
+        secondHalf!.next = temp1;
+        secondHalf = temp2;
+        curr = temp1;
     }
 }
