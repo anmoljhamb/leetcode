@@ -7,53 +7,22 @@ class ListNode {
     }
 }
 
-function reverseLL(head: ListNode | null) {
-    let prev: ListNode | null = null;
-    let temp = head;
-
-    while (head) {
-        temp = head.next;
-        head.next = prev;
-        prev = head;
-        head = temp;
-    }
-
-    return prev;
-}
-
-function printLL(head: ListNode | null): void {
-    let curr = head;
-    const arr: number[] = [];
-    while (curr) {
-        arr.push(curr.val);
-        curr = curr.next;
-    }
-    console.log(arr);
-}
-
 function removeNthFromEnd(head: ListNode | null, n: number): ListNode | null {
-    let curr = reverseLL(head);
-    let temp = curr;
-    // printLL(curr);
+    const dummy = new ListNode(0, head);
 
-    if (curr!.next === null) {
-        return null;
+    let left: ListNode | null = dummy;
+    let right: ListNode | null = dummy.next;
+
+    while (n--) {
+        right = right!.next;
     }
 
-    let count = 1;
-
-    if (n === 1) {
-        return reverseLL(curr!.next);
+    while (right) {
+        right = right!.next;
+        left = left!.next;
     }
 
-    while (++count <= n - 1) {
-        curr = curr!.next;
-    }
-    // printLL(curr);
+    left!.next = left!.next!.next;
 
-    curr!.next = curr!.next!.next;
-    // printLL(curr);
-    // printLL(temp);
-
-    return reverseLL(temp);
+    return dummy.next;
 }
