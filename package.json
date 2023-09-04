@@ -12,6 +12,7 @@
         "typescript": "^5.1.6"
     },
     "scripts": {
-        "dev": "nodemon driver.ts"
+        "driver": "nodemon driver.ts",
+        "sorting": "nodemon sorting.ts"
     }
 }
