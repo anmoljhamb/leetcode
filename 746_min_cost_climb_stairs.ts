@@ -1,9 +1,23 @@
-function minCostClimbingStairs(cost: number[]): number {
-    cost.push(0);
+function helper(
+    low: number,
+    arr: number[],
+    memo: Record<number, number> = {}
+): number {
+    if (low in memo) return memo[low];
+    if (low >= arr.length) return 0;
 
-    for (let i = cost.length - 3; i >= 0; i--) {
-        cost[i] = Math.min(cost[i] + cost[i + 1], cost[i] + cost[i + 2]);
-    }
+    const temp1 = helper(low + 1, arr, memo);
+    const temp2 = helper(low + 2, arr, memo);
 
-    return Math.min(cost[0], cost[1]);
+    memo[low] = arr[low] + Math.min(temp1, temp2);
+    return memo[low];
 }
+
+function minCostClimbingStairs(cost: number[]): number {
+    cost.unshift(0);
+    return helper(0, cost);
+}
+
+minCostClimbingStairs([1, 100, 1, 1, 1, 100, 1, 1, 100, 1]);
+minCostClimbingStairs([10, 15, 20]);
+minCostClimbingStairs([12, 100]);
