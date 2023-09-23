@@ -14,30 +14,3 @@ function longestStrChain(words: string[]) {
     }
     return ans;
 }
-
-console.log(
-    longestStrChain([
-        "kxbvnw",
-        "uqjszp",
-        "pmukt",
-        "aai",
-        "aaicwm",
-        "mhkzelhyek",
-        "cjv",
-        "v",
-        "uqjjspzpp",
-        "aaim",
-        "uqjjszp",
-        "uqjjspzppd",
-        "uqjjspzp",
-        "aaicm",
-        "pukt",
-        "pvmukt",
-        "dgdb",
-        "aaicwbm",
-        "mhkelhyek",
-        "jv",
-    ])
-);
-// console.log(longestStrChain(["xbc", "pcxbcf", "xb", "cxbc", "pcxbc"]));
-// console.log(longestStrChain(["abcd", "dbqca"]));
