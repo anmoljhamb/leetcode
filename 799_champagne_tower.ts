@@ -1,19 +1,24 @@
-function choose(n: number, r: number) {
-    const dp: number[] = new Array(n + 1).fill(1);
-    for (let i = 1; i <= n; i++) {
-        dp[i] = i * dp[i - 1];
-    }
-    return dp[n] / (dp[n - r] * dp[r]);
-}
-
 function champagneTower(
     poured: number,
     query_row: number,
     query_glass: number
 ): number {
-    const portion = choose(query_row, query_glass) / Math.pow(2, query_row);
-    const available = Math.max(poured - (query_row * (query_row + 1)) / 2, 0);
-    return Math.min(portion * available, 1);
+    const dp: number[][] = [...new Array(query_row + 1)].map((_, index) =>
+        new Array(index + 1).fill(0)
+    );
+    dp[0][0] = poured;
+
+    for (let i = 0; i < query_row; i++) {
+        for (let j = 0; j <= i; j++) {
+            if (dp[i][j] > 1) {
+                const temp = dp[i][j] - 1;
+                dp[i + 1][j] += temp / 2;
+                dp[i + 1][j + 1] += temp / 2;
+                dp[i][j] -= temp;
+            }
+        }
+    }
+    return Math.min(dp[query_row][query_glass], 1);
 }
 
-console.log(champagneTower(4, 2, 1));
+console.log(champagneTower(6, 3, 1));
