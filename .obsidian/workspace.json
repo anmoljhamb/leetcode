@@ -1,0 +1,152 @@
+{
+  "main": {
+    "id": "956b666a626c66fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "35dd4cf81698b243",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7cb8f321520aaad6",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4d7b9a59f5b68695",
+    "type": "split",
+    "children": [
+      {
+        "id": "9b55faf82fecaa85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73febab1d17a958c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "cd16c24463fd963c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#Easy",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5618d5060ff6c83e",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "ea9c9e98354f1b4f",
+    "type": "split",
+    "children": [
+      {
+        "id": "ef1af920760379a4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "74e25edb0d643588",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "101b8e2c5aeb265c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0f4e4866ee002d69",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "358f04958ce1743e",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "101b8e2c5aeb265c",
+  "lastOpenFiles": [
+    "Array and Hashing/Untitled.md",
+    "Untitled 1.canvas",
+    "Untitled.canvas",
+    "files.md",
+    "Array and Hashing/Array and Hashing.md",
+    "Array and Hashing/217. Contains Duplicate.md",
+    "DSA.md",
+    "2023-09-26.md",
+    "Array and Hashing"
+  ]
+}
