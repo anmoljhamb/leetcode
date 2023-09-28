@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "35dd4cf81698b243",
+        "id": "4a49b7b22c5aa635",
         "type": "tabs",
         "children": [
           {
-            "id": "7cb8f321520aaad6",
+            "id": "53b3df228adb8883",
             "type": "leaf",
             "state": {
-              "type": "graph",
+              "type": "empty",
               "state": {}
             }
           }
@@ -134,11 +134,15 @@
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "101b8e2c5aeb265c",
+  "active": "53b3df228adb8883",
   "lastOpenFiles": [
+    "316_remove_duplicate.ts",
+    "This is my sample note.md",
+    "Untitled",
     "Array and Hashing/Untitled.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
