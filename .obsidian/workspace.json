@@ -11,8 +11,12 @@
             "id": "c6a60292be43f7b5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "array_and_hashing/Two Sum.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "array_and_hashing/Two Sum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "array_and_hashing/Two Sum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "array_and_hashing/Two Sum.md"
+              }
             }
           }
         ],
@@ -138,12 +146,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c6a60292be43f7b5",
+  "active": "73febab1d17a958c",
   "lastOpenFiles": [
+    "array_and_hashing/Codes/001_two_sums.ts",
+    "array_and_hashing/Two Sum.md",
+    "Notes.md",
+    "array_and_hashing/Array And Hashing.md",
     "array_and_hashing/Valid Anagram.md",
     "array_and_hashing/Codes/242_valid_anagram.ts",
     "templates/Problem Template.md",
-    "array_and_hashing/Array And Hashing.md",
     "array_and_hashing/Contains Duplicate.md",
     "array_and_hashing/Codes/Untitled.md",
     "Untitled",
@@ -151,7 +162,6 @@
     "array_and_hashing/Codes",
     "217_duplicate.ts",
     "array_and_hashing/Codes/217_duplicate.ts",
-    "Notes.md",
     "array_and_hashing",
     "README.md",
     "binary_search/search.ts",

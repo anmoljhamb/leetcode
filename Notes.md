@@ -1,2 +1,2 @@
 Topic Wise Questions
-- Array and Hashing
+- [[array_and_hashing/Array And Hashing|Array And Hashing]]
