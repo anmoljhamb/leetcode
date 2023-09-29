@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4a49b7b22c5aa635",
+        "id": "087eb20dda3154ed",
         "type": "tabs",
         "children": [
           {
-            "id": "53b3df228adb8883",
+            "id": "f90d571179f4a353",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -65,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ea9c9e98354f1b4f",
@@ -138,13 +139,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "53b3df228adb8883",
+  "active": "f90d571179f4a353",
   "lastOpenFiles": [
+    "217_duplicate.ts",
+    "array_and_hashing/Contains Duplicate.md",
+    "array_and_hashing/217_duplicate.ts",
+    "array_and_hashing/Array And Hashing.md",
+    "Notes.md",
+    "array_and_hashing",
+    "README.md",
     "binary_search/search.ts",
     "binary_search",
     "316_remove_duplicate.ts",
     "This is my sample note.md",
-    "Untitled",
     "Array and Hashing/Untitled.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
