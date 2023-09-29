@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "087eb20dda3154ed",
+        "id": "23c6adabef995c8b",
         "type": "tabs",
         "children": [
           {
-            "id": "f90d571179f4a353",
+            "id": "c6a60292be43f7b5",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -65,8 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "ea9c9e98354f1b4f",
@@ -139,15 +138,19 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "f90d571179f4a353",
+  "active": "c6a60292be43f7b5",
   "lastOpenFiles": [
-<<<<<<< Updated upstream
-    "217_duplicate.ts",
-=======
->>>>>>> Stashed changes
-    "array_and_hashing/Contains Duplicate.md",
-    "array_and_hashing/217_duplicate.ts",
+    "array_and_hashing/Valid Anagram.md",
+    "array_and_hashing/Codes/242_valid_anagram.ts",
+    "templates/Problem Template.md",
     "array_and_hashing/Array And Hashing.md",
+    "array_and_hashing/Contains Duplicate.md",
+    "array_and_hashing/Codes/Untitled.md",
+    "Untitled",
+    "templates",
+    "array_and_hashing/Codes",
+    "217_duplicate.ts",
+    "array_and_hashing/Codes/217_duplicate.ts",
     "Notes.md",
     "array_and_hashing",
     "README.md",
@@ -162,7 +165,6 @@
     "Array and Hashing/Array and Hashing.md",
     "Array and Hashing/217. Contains Duplicate.md",
     "DSA.md",
-    "2023-09-26.md",
-    "Array and Hashing"
+    "2023-09-26.md"
   ]
 }

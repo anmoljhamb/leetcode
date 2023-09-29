@@ -37,4 +37,4 @@ function containsDuplicate(arr: number[]): boolean {
 }
 ```
 
-![[217_duplicate.ts]]
+![[Codes/217_duplicate.ts]]

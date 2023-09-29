@@ -3,5 +3,6 @@
   "newFileLocation": "current",
   "newLinkFormat": "relative",
   "showUnsupportedFiles": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }
