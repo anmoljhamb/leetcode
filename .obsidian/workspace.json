@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "array_and_hashing/Two Sum.md",
+                "file": "array_and_hashing/Array And Hashing.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "272cf373986bfca2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "two_pointer/Valid Palindrome.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -69,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ea9c9e98354f1b4f",
@@ -85,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "array_and_hashing/Two Sum.md",
+                "file": "two_pointer/Valid Palindrome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +116,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "array_and_hashing/Two Sum.md",
+                "file": "two_pointer/Valid Palindrome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "array_and_hashing/Two Sum.md"
+                "file": "two_pointer/Valid Palindrome.md"
               }
             }
           }
@@ -146,18 +160,22 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "73febab1d17a958c",
+  "active": "272cf373986bfca2",
   "lastOpenFiles": [
-    "array_and_hashing/Codes/001_two_sums.ts",
-    "array_and_hashing/Two Sum.md",
-    "Notes.md",
+    "two_pointer/Codes/125_valid_palin.ts",
+    "two_pointer/Two Pointer.md",
+    "two_pointer/Valid Palindrome.md",
+    "two_pointer/Codes",
     "array_and_hashing/Array And Hashing.md",
+    "two_pointer",
+    "array_and_hashing/Two Sum.md",
+    "array_and_hashing/Codes/001_two_sums.ts",
+    "Notes.md",
     "array_and_hashing/Valid Anagram.md",
     "array_and_hashing/Codes/242_valid_anagram.ts",
     "templates/Problem Template.md",
     "array_and_hashing/Contains Duplicate.md",
     "array_and_hashing/Codes/Untitled.md",
-    "Untitled",
     "templates",
     "array_and_hashing/Codes",
     "217_duplicate.ts",
@@ -165,8 +183,6 @@
     "array_and_hashing",
     "README.md",
     "binary_search/search.ts",
-    "binary_search",
-    "316_remove_duplicate.ts",
     "This is my sample note.md",
     "Array and Hashing/Untitled.md",
     "Untitled 1.canvas",
