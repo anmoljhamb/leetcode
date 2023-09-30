@@ -4,14 +4,14 @@
     "type": "split",
     "children": [
       {
-        "id": "4a49b7b22c5aa635",
+        "id": "3e66e441407e250d",
         "type": "tabs",
         "children": [
           {
-            "id": "53b3df228adb8883",
+            "id": "b643fe25051b1e10",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {}
             }
           }
@@ -65,7 +65,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "ea9c9e98354f1b4f",
@@ -138,21 +139,45 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "53b3df228adb8883",
+  "active": "b643fe25051b1e10",
   "lastOpenFiles": [
+    "242_valid_anagram.ts",
+    "217_duplicate.ts",
+    "125_valid_palin.ts",
+    "001_two_sums.ts",
+    "001_two_sums.cpp",
+    "trees/Trees.md",
+    "backtracking/Backtracking.md",
+    "backtracking",
+    "two_pointer/Two Pointer.md",
     "binary_search/search.ts",
+    "binary_search/Binary Search.md",
     "binary_search",
-    "316_remove_duplicate.ts",
+    "heap_or_priority_queue/Heap or Priority Queue.md",
+    "heap_or_priority_queue",
+    "tries/Tries.md",
+    "tries",
+    "templates/Problem Template.md",
+    "two_pointer/Valid Palindrome.md",
+    "array_and_hashing/Two Sum.md",
+    "array_and_hashing/Contains Duplicate.md",
+    "array_and_hashing/Valid Anagram.md",
+    "array_and_hashing/Array And Hashing.md",
+    "stack/Stack.md",
+    "linked_list/Linked List.md",
+    "bi_weekly_contest_113/binary_search/Binary Search.md",
+    "trees",
+    "sliding_window/Sliding Window.md",
+    "templates/Topic Template.md",
+    "Notes.md",
+    "array_and_hashing/Codes/Untitled.md",
+    "README.md",
     "This is my sample note.md",
-    "Untitled",
     "Array and Hashing/Untitled.md",
     "Untitled 1.canvas",
     "Untitled.canvas",
     "files.md",
     "Array and Hashing/Array and Hashing.md",
-    "Array and Hashing/217. Contains Duplicate.md",
-    "DSA.md",
-    "2023-09-26.md",
-    "Array and Hashing"
+    "Array and Hashing/217. Contains Duplicate.md"
   ]
 }
