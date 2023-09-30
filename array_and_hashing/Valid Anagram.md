@@ -1,7 +1,7 @@
 **Problem Number**: 242
 **Problem Difficulty**: #Easy
 **Best Submission Link**: [Link](https://leetcode.com/problems/valid-anagram/submissions/1025531627/)
-**Tags**: #Array #HashMap #String
+**Tags**: #Array #HashMap #String #Problem 
 
 ### Problem Statement
 

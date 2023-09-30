@@ -4,19 +4,34 @@
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": false,
-  "collapse-color-groups": true,
-  "colorGroups": [],
+  "showOrphans": true,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "tag:#topic  ",
+      "color": {
+        "a": 1,
+        "rgb": 15619863
+      }
+    },
+    {
+      "query": "tag:#Problem  ",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    }
+  ],
   "collapse-display": false,
   "showArrow": true,
-  "textFadeMultiplier": -0.5,
-  "nodeSizeMultiplier": 1.65677083333333,
-  "lineSizeMultiplier": 1.35052083333333,
+  "textFadeMultiplier": -3,
+  "nodeSizeMultiplier": 1.81536483010694,
+  "lineSizeMultiplier": 2.027629619602,
   "collapse-forces": false,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.732024521086986,
+  "centerStrength": 0.0989194195739426,
+  "repelStrength": 13.4993908217138,
+  "linkStrength": 0.363070258562339,
+  "linkDistance": 119,
+  "scale": 0.3933189859736534,
   "close": false
 }

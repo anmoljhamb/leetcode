@@ -1,7 +1,7 @@
 **Problem Number**: 1
 **Problem Difficulty**: #Easy
 **Best Submission Link**: [Link](https://leetcode.com/problems/two-sum/submissions/1024476426/)
-**Tags**: #Array #HashMap 
+**Tags**: #Array #HashMap #Problem
 
 ### Problem Statement
 
@@ -46,5 +46,4 @@ function twoSum(nums: number[], target: number): number[] {
 }
 ```
 
-![[../001_two_sums.cpp|001_two_sums]]
-
+![[Codes/001_two_sums.ts|001_two_sums]]

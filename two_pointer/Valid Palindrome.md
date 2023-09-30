@@ -1,7 +1,7 @@
 **Problem Number**: 125
 **Problem Difficulty**: #Easy
 **Best Submission Link**: [Link](https://leetcode.com/problems/valid-palindrome/submissions/1026721569/)
-**Tags**: #String #TwoPointer #Palindrome
+**Tags**: #String #TwoPointer #Palindrome #Problem
 
 ### Problem Statement
 
