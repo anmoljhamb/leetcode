@@ -12,3 +12,5 @@ function maximumTripletValue(arr: number[]): number {
     }
     return maxResult;
 }
+
+console.log(maximumTripletValue([18, 15, 8, 13, 10, 9, 17, 10, 2, 16, 17]));
