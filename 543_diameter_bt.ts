@@ -12,16 +12,16 @@ class TreeNode {
 function diameterOfBinaryTree(root: TreeNode | null): number {
     let ans = 0;
     function helper(node: TreeNode | null) {
-        if (!node) return -1;
+        if (!node) return 0;
 
         const left = helper(node.left);
         const right = helper(node.right);
 
         // Value of current diameter is obv going to be 2+left+right
-        ans = Math.max(ans, left + right + 2);
+        ans = Math.max(ans, left + right + 1);
 
         return 1 + Math.max(left, right);
     }
     helper(root);
-    return ans;
+    return ans - 1;
 }
