@@ -9,29 +9,19 @@ class TreeNode {
     }
 }
 
-function heightOfNode(node: TreeNode | null) {
-    if (!node) return 0;
-
-    const left = heightOfNode(node.left);
-    const right = heightOfNode(node.right);
-
-    return Math.max(left, right) + 1;
-}
-
-function helper(node: TreeNode | null) {
-    if (!node) return 0;
-
-    // get height left of left side
-    const left = heightOfNode(node.left);
-    // get height of right side
-    const right = heightOfNode(node.right);
-    const currentDiamater = left + right;
-
-    // console.log(left, right);
-
-    return Math.max(currentDiamater, helper(node.left), helper(node.right));
-}
-
 function diameterOfBinaryTree(root: TreeNode | null): number {
-    return helper(root);
+    let ans = 0;
+    function helper(node: TreeNode | null) {
+        if (!node) return -1;
+
+        const left = helper(node.left);
+        const right = helper(node.right);
+
+        // Value of current diameter is obv going to be 2+left+right
+        ans = Math.max(ans, left + right + 2);
+
+        return 1 + Math.max(left, right);
+    }
+    helper(root);
+    return ans;
 }
