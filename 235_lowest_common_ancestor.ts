@@ -22,18 +22,11 @@ function lowestCommonAncestor(
         if (!node) return;
         // The answer node is the one where both split into different branches.
 
-        if (
-            !(
-                (pVal < node.val && qVal < node.val) ||
-                (pVal > node.val && qVal > node.val)
-            )
-        ) {
-            ans = node;
-            return;
-        }
+        if (pVal < node.val && qVal < node.val) return helper(node.left);
+        if (pVal > node.val && qVal > node.val) return helper(node.right);
 
-        helper(node.left);
-        helper(node.right);
+        ans = node;
+        return;
     }
 
     helper(root);
