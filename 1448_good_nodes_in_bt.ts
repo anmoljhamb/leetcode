@@ -10,37 +10,18 @@ class TreeNode {
 }
 
 function goodNodes(root: TreeNode | null): number {
-    const arr: (number | null)[] = [];
-    let count = 1;
+    let count = 0;
+    const maxVal = root!.val;
 
-    const q = [root];
+    function helper(node: TreeNode | null, max = maxVal) {
+        if (!node) return;
 
-    while (q.length) {
-        const curr = q.shift() as TreeNode | null;
-        if (!curr) {
-            arr.push(null);
-            continue;
-        }
-
-        arr.push(curr.val);
-        q.push(curr.left);
-        q.push(curr.right);
+        const temp = Math.max(node.val, max);
+        if (node.val >= max) count++;
+        helper(node.left, temp);
+        helper(node.right, temp);
     }
 
-    for (let i = 1; i < arr.length; i++) {
-        if (!arr[i]) continue;
-        const currEl = arr[i]!;
-        let j = i;
-        let condn = true;
-        console.log(`for element ${currEl}`);
-        while (j >= 0) {
-            j = Math.floor((j - 1) / 2);
-            console.log(`child ${arr[j]}`);
-            if (j >= 0) condn &&= arr[j]! <= currEl;
-            if (!condn) break;
-        }
-        if (condn) count += 1;
-    }
-
+    helper(root);
     return count;
 }
