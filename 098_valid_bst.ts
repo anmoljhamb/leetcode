@@ -9,29 +9,16 @@ class TreeNode {
     }
 }
 
-function isValidLeft(node: TreeNode | null, val: number) {
+function isValidBST(
+    node: TreeNode | null,
+    leftBoundary = -Infinity,
+    rightBoundary = Infinity
+): boolean {
     if (!node) return true;
-    return (
-        node.val < val &&
-        isValidLeft(node.left, val) &&
-        isValidLeft(node.right, val)
-    );
-}
+    if (!(node.val < rightBoundary && node.val > leftBoundary)) return false;
 
-function isValidRight(node: TreeNode | null, val: number) {
-    if (!node) return true;
-    return (
-        node.val > val &&
-        isValidRight(node.left, val) &&
-        isValidRight(node.right, val)
-    );
-}
+    const left = isValidBST(node.left, leftBoundary, node.val);
+    const right = isValidBST(node.right, node.val, rightBoundary);
 
-function isValidBST(root: TreeNode | null): boolean {
-    if (!root) return true;
-
-    const left = isValidLeft(root.left, root.val);
-    const right = isValidRight(root.right, root.val);
-
-    return left && right && isValidBST(root.left) && isValidBST(root.right);
+    return left && right;
 }
