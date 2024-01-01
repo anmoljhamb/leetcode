@@ -5,8 +5,8 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
     const total = a.length + b.length;
     const half = Math.floor(total / 2);
 
-    let low = 0,
-        high = a.length - 1;
+    let low = 0;
+    let high = a.length - 1;
 
     while (true) {
         const mid1 = Math.floor((low + high) / 2);
@@ -32,6 +32,4 @@ function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
             low = mid1 + 1;
         }
     }
-
-    return 0;
 }
