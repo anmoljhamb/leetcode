@@ -1,21 +1,23 @@
-// Memoization DP
+function recur(n: number) {
+  if (n == 0 || n == 1) return 1;
+  return recur(n - 1) + recur(n - 2);
+}
 
-// function climbStairs(n: number, memo: Record<number, number> = {}): number {
-//     if (n in memo) return memo[n];
-//     if (n <= 2) return n;
-//     memo[n] = climbStairs(n - 1, memo) + climbStairs(n - 2, memo);
-//     return memo[n];
-// }
-
-// Tabular Form
-function climbStairs(n: number) {
-    const dp: number[] = new Array(n + 1).fill(0);
-    dp[0] = 1;
-
-    for (let i = 0; i <= n; i++) {
-        dp[i + 1] += dp[i];
-        dp[i + 2] += dp[i];
+function memo(n: number) {
+  const memo: number[] = new Array<number>(n + 1).fill(-1);
+  memo[0] = 1;
+  memo[1] = 1;
+  function rec(n: number) {
+    if (memo[n] !== -1) {
+      return memo[n];
     }
+    memo[n] = rec(n - 1) + rec(n - 2);
+    return memo[n];
+  }
+  rec(n);
+  return memo[n];
+}
 
-    return dp[n];
+function climbStairs(n: number) {
+  return memo(n);
 }
