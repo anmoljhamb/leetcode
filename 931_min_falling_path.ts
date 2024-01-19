@@ -1,9 +1,8 @@
 function table(mat: number[][]) {
   const n = mat.length;
-  const dp = new Array<number[]>(n);
-  for (let i = 0; i < n; i++) {
-    dp[i] = new Array(n).fill(Infinity);
-  }
+  const dp: number[][] = [...new Array(n)].map(() =>
+    new Array(n).fill(Infinity),
+  );
 
   for (let j = 0; j < n; j++) {
     dp[n - 1][j] = mat[n - 1][j];
