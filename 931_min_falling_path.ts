@@ -1,25 +1,22 @@
 function table(mat: number[][]) {
   const n = mat.length;
-  const dp: number[][] = [...new Array(n)].map(() =>
-    new Array(n).fill(Infinity),
-  );
 
-  for (let j = 0; j < n; j++) {
-    dp[n - 1][j] = mat[n - 1][j];
-  }
+  let lastRow = [...mat[n - 1]];
   for (let i = n - 2; i > -1; i--) {
+    const curr = [];
     for (let j = 0; j < n; j++) {
-      const left = j > 0 ? dp[i + 1][j - 1] : Infinity;
-      const bottom = dp[i + 1][j];
-      const right = j < n - 1 ? dp[i + 1][j + 1] : Infinity;
+      const left = j > 0 ? lastRow[j - 1] : Infinity;
+      const bottom = lastRow[j];
+      const right = j < n - 1 ? lastRow[j + 1] : Infinity;
 
-      dp[i][j] = mat[i][j] + Math.min(left, bottom, right);
+      curr.push(mat[i][j] + Math.min(left, bottom, right));
     }
+    lastRow = curr;
   }
 
   let ans = Infinity;
   for (let i = 0; i < n; i++) {
-    ans = Math.min(ans, dp[0][i]);
+    ans = Math.min(lastRow[i], ans);
   }
   return ans;
 }
