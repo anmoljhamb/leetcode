@@ -5,43 +5,19 @@
 #include <unordered_map>
 using namespace std;
 
-int get_char_pos(char ch) { return (int)ch - (int)'a'; }
-
-string make_key(string str) {
-  unordered_map<int, int> hash;
-  int temp;
-  for (char ch : str) {
-    temp = get_char_pos(ch);
-    if (hash.count(temp) == 0) {
-      hash[temp] = 1;
-    } else {
-      hash[temp]++;
-    }
-  }
-  string ans = "";
-  for (int i = 0; i < 26; i++) {
-    ans += to_string(i) + "-" + to_string(hash[i]) + " ";
-  }
-  return ans;
-}
-
 class Solution {
 public:
   vector<vector<string>> groupAnagrams(vector<string> &strs) {
-    unordered_map<string, vector<string>> hash;
-    string temp;
-    for (string str : strs) {
-      temp = make_key(str);
-      if (hash.count(temp) == 0) {
-        hash[temp] = {str};
-      } else {
-        hash[temp].push_back(str);
-      }
+    unordered_map<string, vector<string>> mp;
+    for (auto x : strs) {
+      string word = x;
+      sort(word.begin(), word.end());
+      mp[word].push_back(x);
     }
 
     vector<vector<string>> ans;
-    for (auto _pair : hash) {
-      ans.push_back(_pair.second);
+    for (auto x : mp) {
+      ans.push_back(x.second);
     }
     return ans;
   }
