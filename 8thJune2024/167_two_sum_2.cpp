@@ -10,7 +10,7 @@ public:
     while (low < high) {
       temp = numbers[low] + numbers[high];
       if (temp == target)
-        return {low, high};
+        return {low + 1, high + 1};
       if (temp < target)
         low++;
       else
