@@ -12,7 +12,7 @@ public:
       int mid = (low + high) / 2;
       if (arr[low] <= arr[mid] && arr[mid] <= arr[high]) {
         ans = min(ans, arr[low]);
-        low = mid + 1;
+        return ans;
       } else if (arr[mid] <= arr[high] && arr[high] <= arr[low]) {
         ans = min(ans, arr[mid]);
         high = mid - 1;
