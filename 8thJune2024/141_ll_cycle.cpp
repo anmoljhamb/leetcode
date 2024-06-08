@@ -14,10 +14,10 @@ public:
   bool hasCycle(ListNode *head) {
     ListNode *fast = head, *slow = head;
     while (fast != nullptr && fast->next != nullptr) {
-      if (slow == fast)
-        return true;
       fast = fast->next->next;
       slow = slow->next;
+      if (slow == fast)
+        return true;
     }
     return false;
   }
