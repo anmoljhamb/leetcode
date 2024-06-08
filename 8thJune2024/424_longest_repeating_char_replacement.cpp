@@ -12,7 +12,7 @@ public:
     int left = 0, right = 0;
     for (right = 0; right < s.size(); right++) {
       hash[pos(s[right])]++;
-      max_freq = max(max_freq, *max_element(hash, hash + 26));
+      max_freq = *max_element(hash, hash + 26);
       while (right - left + 1 - max_freq > k) {
         hash[pos(s[left])]--;
         left++;
