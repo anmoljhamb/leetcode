@@ -5,3 +5,4 @@ out.txt
 .vscode
 node_modules
 .obsidian
+*.out
