@@ -12,7 +12,7 @@ public:
   int strStr(string haystack, string needle) {
     const int n = haystack.size(), m = needle.size();
     vector<int> lps(m, 0);
-    int prevLPS = 0, i = 1;
+    int prevLPS = 0, i = 1, j = 0;
 
     while (i < m) {
       if (needle[i] == needle[prevLPS]) {
@@ -32,6 +32,26 @@ public:
     }
 
     print(lps);
-    return 0;
+
+    i = 0;
+    j = 0;
+
+    while (i < n) {
+      if (haystack[i] == needle[j]) {
+        i++;
+        j++;
+      } else {
+        if (j == 0) {
+          i++;
+        } else {
+          j = lps[j - 1];
+        }
+      }
+
+      if (j == m) {
+        return i - m;
+      }
+    }
+    return -1;
   }
 };
