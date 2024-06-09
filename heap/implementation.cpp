@@ -4,20 +4,14 @@ using namespace std;
 class Heap {
   vector<int> arr;
 
-  void swap(int i, int j) {
-    arr[i] = arr[i] ^ arr[j];
-    arr[j] = arr[i] ^ arr[j];
-    arr[i] = arr[i] ^ arr[j];
-  }
-
 public:
   Heap() { arr = vector<int>(1); }
 
   void insert(int x) {
     arr.push_back(x);
     int i = arr.size() - 1;
-    while (i != 1 || arr[i] < arr[i / 2]) {
-      swap(i, i / 2);
+    while (i > 1 && arr[i / 2] < arr[i]) {
+      swap(arr[i], arr[i / 2]);
       i = i / 2;
     }
   }
@@ -34,10 +28,10 @@ int main() {
   Heap heap;
 
   heap.insert(50);
-  heap.print();
-  heap.insert(70);
-  heap.print();
-  heap.insert(90);
+  heap.insert(55);
+  heap.insert(53);
+  heap.insert(52);
+  heap.insert(54);
   heap.print();
 
   return 0;
