@@ -35,7 +35,7 @@ public:
 
     int i = 1;
     // go till the leaf nodes.
-    while (i < (arr.size()) / 2) {
+    while (i <= (arr.size()) / 2) {
       if (arr[i] < arr[2 * i]) {
         swap(arr[i], arr[2 * i]);
         i = 2 * i;
@@ -51,6 +51,30 @@ public:
   }
 };
 
+void heapify(vector<int> &arr, int i) {
+  int largest = i;
+  int left = 2 * i;
+  int right = 2 * i + 1;
+
+  if (left < arr.size() && arr[left] > arr[largest]) {
+    largest = left;
+  }
+
+  if (right < arr.size() && arr[right] > arr[largest]) {
+    largest = right;
+  }
+
+  if (largest != i) {
+    swap(arr[i], arr[largest]);
+    heapify(arr, largest);
+  }
+}
+
+void build_heap(vector<int> &arr) {
+  for (int i = arr.size() / 2; i >= 1; i--) {
+    heapify(arr, i);
+  }
+}
 int main() {
   Heap heap;
 
@@ -62,6 +86,14 @@ int main() {
   heap.print();
   heap.delete_top();
   heap.print();
+
+  vector<int> arr = {-1, 54, 53, 55, 52, 50};
+  build_heap(arr);
+
+  for (auto x : arr) {
+    cout << x << " ";
+  }
+  cout << endl;
 
   return 0;
 }
