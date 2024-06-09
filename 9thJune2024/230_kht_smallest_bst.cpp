@@ -16,7 +16,7 @@ struct TreeNode {
 class Solution {
   int ans = 0;
   int count = 0;
-  vector<int> sorted;
+  int index = 0;
 
 public:
   void helper(TreeNode *root) {
@@ -25,22 +25,18 @@ public:
     }
 
     helper(root->left);
-    sorted.push_back(root->val);
+    if (count == index) {
+      ans = root->val;
+    }
+    count++;
     helper(root->right);
 
     return;
   }
 
-  void printSorted() {
-    for (auto x : sorted) {
-      cout << x << " ";
-    }
-    cout << endl;
-  }
-
   int kthSmallest(TreeNode *root, int k) {
+    index = k - 1;
     helper(root);
-    printSorted();
-    return sorted[k - 1];
+    return ans;
   }
 };
