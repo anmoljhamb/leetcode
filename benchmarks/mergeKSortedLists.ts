@@ -19,6 +19,35 @@ function convertArrayToLL(arr: number[]) {
   return dummy.next;
 }
 
+function mergeTwo(list1: ListNode | null, list2: ListNode | null) {
+  const dummy = new ListNode();
+  let tail = dummy;
+
+  let count = 0;
+
+  while (list1 && list2) {
+    count++;
+    if (list1.val < list2.val) {
+      tail.next = list1;
+      list1 = list1.next!;
+    } else {
+      tail.next = list2;
+      list2 = list2.next;
+    }
+    tail = tail.next!;
+  }
+
+  if (list1) {
+    tail.next = list1;
+  }
+
+  if (list2) {
+    tail.next = list2;
+  }
+
+  return [dummy.next, count];
+}
+
 function printLL(head: ListNode | null) {
   while (head) {
     console.log(head.val);
@@ -28,6 +57,16 @@ function printLL(head: ListNode | null) {
 
 function mergeKSorted1(lists: Array<ListNode | null>): number {
   let count = 0;
+
+  if (lists.length == 0) return 0;
+
+  let dummy: ListNode | null = lists[0];
+
+  for (let i = 1; i < lists.length; i++) {
+    const [temp1, temp2] = mergeTwo(dummy, lists[i]);
+    count += temp2 as number;
+    dummy = temp1 as ListNode | null;
+  }
 
   return count;
 }
