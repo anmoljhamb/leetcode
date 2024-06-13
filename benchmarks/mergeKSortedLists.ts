@@ -94,7 +94,7 @@ function mergeKSorted2(lists: Array<ListNode | null>): number {
 }
 
 function main() {
-  const k = 4;
+  const k = 10000;
   const n = 10;
   const arr: number[][] = [...new Array(k)].map(() => {
     return [...new Array(n)].map((_, i) => i + 1);
