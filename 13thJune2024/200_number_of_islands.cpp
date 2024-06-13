@@ -1,68 +1,66 @@
 #include <bits/stdc++.h>
+#include <queue>
+#include <utility>
 using namespace std;
 
 typedef unordered_set<int> us;
 
 class Solution {
   int n, m;
-  int pos(int i, int j) { return i * n + j; }
+  int pos(int i, int j) { return i * m + j; }
   int ans = 0;
   vector<bool> visited;
 
-  void print_list(vector<unordered_set<int>> list) {
-    for (int i = 0; i < list.size(); i++) {
-      cout << i << ": ";
-      for (auto x : list[i]) {
-        cout << x << " ";
+  void bfs(vector<vector<char>> grid, int i, int j) {
+    queue<pair<int, int>> q;
+    q.push({i, j});
+
+    while (!q.empty()) {
+      queue<pair<int, int>> temp;
+
+      while (!q.empty()) {
+        auto curr = q.front();
+        q.pop();
+
+        if (visited[pos(curr.first, curr.second)])
+          continue;
+
+        if (curr.first + 1 < n && grid[curr.first + 1][curr.second] != '0') {
+          temp.push({curr.first + 1, curr.second});
+        }
+
+        if (curr.first - 1 >= 0 && grid[curr.first - 1][curr.second] != '0') {
+          temp.push({curr.first - 1, curr.second});
+        }
+
+        if (curr.second + 1 < m && grid[curr.first][curr.second + 1] != '0') {
+          temp.push({curr.first, curr.second + 1});
+        }
+
+        if (curr.second - 1 >= 0 && grid[curr.first][curr.second - 1] != '0') {
+          temp.push({curr.first, curr.second - 1});
+        }
+
+        visited[pos(curr.first, curr.second)] = true;
       }
-      cout << endl;
-    }
-  }
 
-  void dfs(vector<us> list, int i) {
-    if (visited[i])
-      return;
-
-    visited[i] = true;
-
-    for (int j : list[i]) {
-      if (!visited[j]) {
-        dfs(list, j);
-        visited[j] = true;
-      }
+      q = temp;
     }
   }
 
 public:
   int numIslands(vector<vector<char>> &grid) {
     ans = 0;
-    m = grid.size();
-    n = grid[0].size();
+    n = grid.size();
+    m = grid[0].size();
     visited = vector<bool>(m * n, false);
-    vector<unordered_set<int>> list(m * n, unordered_set<int>());
 
-    for (int i = 0; i < m; i++) {
-      for (int j = 0; j < n; j++) {
-        int k = 1;
-        while (i + k < m && grid[i + k][j] != '0') {
-          list[pos(i, j)].insert(pos(i + k, j));
-          list[pos(i + k, j)].insert(pos(i, j));
-          k++;
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < m; j++) {
+        if (!visited[pos(i, j)] && grid[i][j] != '0') {
+          bfs(grid, i, j);
+          ans++;
         }
-
-        k = 0;
-        while (j + k < n && grid[i][j + k] != '0') {
-          list[pos(i, j)].insert(pos(i, j + k));
-          list[pos(i, j + k)].insert(pos(i, j));
-          k++;
-        }
-      }
-    }
-
-    for (int i = 0; i < m * n; i++) {
-      if (!visited[i] && list[i].size() > 0) {
-        dfs(list, i);
-        ans++;
       }
     }
 
