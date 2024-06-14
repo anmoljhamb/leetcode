@@ -24,9 +24,13 @@ public:
     n = grid.size();
     m = grid[0].size();
     visited = vector<vector<bool>>(n, vector<bool>(m, false));
+    int fresh_oranges = 0;
 
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
+        if (grid[i][j] == 1) {
+          fresh_oranges++;
+        }
         if (grid[i][j] == 2) {
           q.push({i, j});
           visited[i][j] = true;
@@ -36,13 +40,19 @@ public:
 
     int time = -1;
 
+    if (fresh_oranges == 0)
+      return 0;
+
     while (!q.empty()) {
       int k = q.size();
       while (k--) {
         auto curr = q.front();
         q.pop();
         int i = curr.first, j = curr.second;
-        grid[i][j] = 2;
+        if (grid[i][j] == 1) {
+          grid[i][j] = 2;
+          fresh_oranges--;
+        }
 
         addRC(q, i + 1, j, grid);
         addRC(q, i - 1, j, grid);
@@ -52,15 +62,8 @@ public:
       time++;
     }
 
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++) {
-        if (grid[i][j] == 1)
-          return -1;
-      }
-    }
-
-    if (time == -1)
-      return 0;
+    if (fresh_oranges > 0)
+      return -1;
 
     return time;
   }
