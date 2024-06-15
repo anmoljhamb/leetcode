@@ -14,7 +14,8 @@ public:
 
     is_visiting[i] = true;
     for (auto x : adj_list[i]) {
-      dfs(adj_list, x);
+      if (!dfs(adj_list, x))
+        return false;
     }
 
     ans.push_back(i);
