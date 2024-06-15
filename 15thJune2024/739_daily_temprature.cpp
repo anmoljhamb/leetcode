@@ -13,7 +13,7 @@ public:
       if (s.empty()) {
         ans[i] = 0;
       } else {
-        while (!s.empty() && s.top().second < temperatures[i]) {
+        while (!s.empty() && s.top().second <= temperatures[i]) {
           s.pop();
         }
         if (s.empty()) {
