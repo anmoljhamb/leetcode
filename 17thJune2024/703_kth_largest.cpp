@@ -1,4 +1,3 @@
-#include <algorithm>
 #include <bits/stdc++.h>
 #include <queue>
 using namespace std;
@@ -12,15 +11,20 @@ public:
     this->k = k;
     pq = priority_queue<int, vector<int>, greater<int>>(nums.begin(),
                                                         nums.end());
-    while (!pq.empty() && pq.size() != k) {
+    while (pq.size() > k) {
       pq.pop();
     }
   }
 
   int add(int val) {
-    pq.push(val);
-    if (pq.size() > k)
+    if (pq.size() >= k) {
+      int top = pq.top();
+      if (val < top) {
+        return top;
+      }
       pq.pop();
+    }
+    pq.push(val);
     return pq.top();
   }
 };
