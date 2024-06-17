@@ -19,7 +19,7 @@ public:
       return true;
 
     int val = root->val;
-    if (val < left || val > right) {
+    if (val <= left || val >= right) {
       return false;
     }
 
